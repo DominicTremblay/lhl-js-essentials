@@ -66,7 +66,7 @@ Very soon, we will create our own function while using other functions. It's goi
 **Remove the `alert` code** and let's get down to business. We want to make it so when our `<form>` is submitted (via enter key or by clicking the send button) we read the text content of the input field (with `id="message"` in the HTML file) and do something with it. For now let's just `alert` it.
 
 ```javascript
-$('form').on('click',function () {
+$('form').on('submit',function () {
   const text = $("#message").val();
   alert(text);
   return false;
