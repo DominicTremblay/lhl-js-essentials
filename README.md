@@ -43,7 +43,7 @@ Now whenever you refresh/load the web page, it will reference two separate JS fi
 
 ## Simple alert
 
-The second file **app.js** needs to exist in our workspace, so let's create it just like you created **style.css** earlier.
+The second file **app.js** is located in the public folder in our workspace, along with **style.css** and **index.html**.
 
 It will be empty at first, but let's add the following code into it.
 
@@ -125,7 +125,7 @@ And there's our message, nice!
 
 # Express for our web server
 
-In our case, we're building a web server, more specifically a _chat 'server'_. So we need to listen for incoming HTTP requests and then send down the HTML, CSS and JavaScript that we wrote earlier for our chat client.
+In our case, we're building a web server, more specifically a _chat 'server'_. So we need to listen for incoming HTTP requests and then send down the HTML, CSS and JavaScript that we have in the public folder for our chat client.
 
 While Node comes with basic HTTP handling support, a very (probably the most) popular third party library (called "modules" in the Node community) named **Express** is used by most developers writing Web servers in Node. This is what we are using here.
 
