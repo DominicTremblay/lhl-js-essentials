@@ -248,7 +248,7 @@ The `app.js` file should look like this.
 ```javascript
 const socket = io();
 
-$("button").on('click', function() {
+$("button").on('submit', function() {
   const text = $("#message").val();
   socket.emit('message', text);
   $('#message').val('');
