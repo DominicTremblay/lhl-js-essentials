@@ -266,23 +266,26 @@ socket.on('message', function (msg) {
 The `index.js` file should look like this:
 
 ```javascript
+// Setup basic express server
 const express = require('express');
 const app = express();
-
-const http = require('http');
-const server = http.Server(app);
-
-app.use(express.static('public'));
-
+const server = require('http').createServer(app);
+// adding the socket.io library
 const io = require('socket.io')(server);
 
+
+// This is how we tell our web server where to find the files to serve
+app.use(express.static('public'));
+
+const port = process.env.PORT || 3000;
+
 io.on('connection', function (socket) {
+  // when the client emits 'new message', this listens and executes
   socket.on('message', function (msg) {
     io.emit('message', msg);
   });
 });
 
-const port = process.env.PORT || 3000;
 server.listen(port, function () {
   console.log('Server listening at port %d', port);
 });
