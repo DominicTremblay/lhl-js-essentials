@@ -67,7 +67,7 @@ Very soon, we will create our own function while using other functions. It's goi
 
 ```javascript
 $('form').on('click',function () {
-  var text = $("#message").val();
+  const text = $("#message").val();
   alert(text);
   return false;
 });
@@ -131,14 +131,14 @@ While Node comes with basic HTTP handling support, a very (probably the most) po
 
 
 ```javascript
-var express = require('express');
-var app = express();
+const express = require('express');
+const app = express();
 
-var server = require('http').createServer(app);
+const server = require('http').createServer(app);
 
 app.use(express.static('public'));
 
-var port = process.env.PORT || 3000;
+const port = process.env.PORT || 3000;
 
 server.listen(port, function () {
   console.log('Server listening at port %d', port);
@@ -175,7 +175,7 @@ To make sure the correct package is added to our project check your dependencies
  
 ```json
 "dependencies": {
-  "express": "^4.12.4",
+  "express": "^4.18.1",
   "socket.io": "*"
 },
 
@@ -186,7 +186,7 @@ To make sure the correct package is added to our project check your dependencies
 Now let's add some code in **index.js** that will use this library. This code block should be placed before/above `server.listen`.
 
 ```javascript
-var io = require('socket.io')(server);
+const io = require('socket.io')(server);
 
 io.on('connection', function (socket) {
   // when the client emits 'new message', this listens and executes
@@ -203,7 +203,7 @@ Next, we need to add similar logic to the client app.
 Open the **public/index.html** file and modify the `script` tags below so that we also reference and make use of Socket.IO. We can do this by adding one more script tag before our `app.js` script tag, so that it looks like this down there.
 
 ```html
-<script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <script src="/socket.io/socket.io.js"></script>
 <script src="app.js"></script>
 ```
@@ -215,7 +215,7 @@ Open **public/app.js**, our client-side JS code file, and let's add some code to
 Add the following code to the very top of the file.
 
 ```javascript
-var socket = io();
+const socket = io();
 ```
 
 This is saying that `socket` is now a reference to the SocketIO library.
@@ -246,10 +246,10 @@ This part tells the browser that any time a message is received from the real ti
 The `app.js` file should look like this.
 
 ```javascript
-var socket = io();
+const socket = io();
 
 $("button").on('click', function() {
-  var text = $("#message").val();
+  const text = $("#message").val();
   socket.emit('message', text);
   $('#message').val('');
   return false;
@@ -266,15 +266,15 @@ socket.on('message', function (msg) {
 The `index.js` file should look like this:
 
 ```javascript
-var express = require('express');
-var app = express();
+const express = require('express');
+const app = express();
 
-var http = require('http');
-var server = http.Server(app);
+const http = require('http');
+const server = http.Server(app);
 
 app.use(express.static('public'));
 
-var io = require('socket.io')(server);
+const io = require('socket.io')(server);
 
 io.on('connection', function (socket) {
   socket.on('message', function (msg) {
@@ -282,7 +282,7 @@ io.on('connection', function (socket) {
   });
 });
 
-var port = process.env.PORT || 3000;
+const port = process.env.PORT || 3000;
 server.listen(port, function () {
   console.log('Server listening at port %d', port);
 });
