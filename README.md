@@ -155,7 +155,7 @@ When all the setup work is done, we then tell the server to listen in on a certa
 
 So for now it's a simple web server serving only static (HTML, CSS and JavaScript) files to any HTTP/Web traffic coming its way. 
 
-Let's try it out by running it using the **Show Live** option at the top. It will bring up the chat app page just like before, with no new functionality. The send button should also be working as before!
+Let's try it out by running it using the **Preview / preview in a new window ** option at the bottom. It will bring up the chat app page just like before, with no new functionality. The send button should also be working as before!
 
 # Socket.IO for Real-time messaging
 
