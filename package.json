@@ -7,11 +7,11 @@
 		"start": "node index.js"
 	},
 	"dependencies": {
-		"express": "^4.12.4",
+		"express": "^4.18.1",
 		"socket.io": "*"
 	},
 	"engines": {
-		"node": "4.4.5"
+		"node": "10.24.1"
 	},
 	"keywords": [
 		"node",
