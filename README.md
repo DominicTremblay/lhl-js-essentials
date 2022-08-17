@@ -19,7 +19,7 @@ The finished app that we'll be building in just a couple of hours today will loo
 
 ## HTML/CSS
 
-Let's start by exploring the HTML/CSS of this application. We'll to understanding it well in order to figure out how to convert it into a fully functional chat application.
+Let's start by exploring the HTML/CSS of this application. We'll need to understand it well in order to figure out how to convert it into a fully functional chat application.
 
 Go ahead, explore the files _public_/index.html and _public_/style.css using the left navigation menu.  
 
@@ -59,7 +59,7 @@ Any time you call a function in JS you have to use parentheses `()` after it, an
 
 Every single predefined JavaScript function has documentation, so we can look up details about how they work. [Case in point](https://developer.mozilla.org/en-US/docs/Web/API/Window/alert).
 
-Very soon, we'll create our own function while using other functions. It's going to get a bit more real, so hold on to your suspenders!
+Very soon, we will create our own function while using other functions. It's going to get a bit more real, so hold on to your suspenders!
 
 ## Custom alert
 
@@ -127,7 +127,7 @@ And there's our message, nice!
 
 In our case, we're building a web server, more specifically a _chat 'server'_. So we need to listen for incoming HTTP requests and then send down the HTML, CSS and JavaScript that we wrote earlier for our chat client.
 
-While Node comes with basic HTTP handling support, a very (probably the most) popular 3rd party library (called "modules" in the Node community) named **Express** is used by most developers writing Web servers in Node. This is what we are using here.
+While Node comes with basic HTTP handling support, a very (probably the most) popular third party library (called "modules" in the Node community) named **Express** is used by most developers writing Web servers in Node. This is what we are using here.
 
 
 ```javascript
@@ -147,7 +147,7 @@ server.listen(port, function () {
 
 ### Explanation
 
-So a bunch of new code and syntax was just give to you there. Let's attempt to break it down.
+So a bunch of new code and syntax was just given to you there. Let's attempt to break it down.
 
 The first few lines are just loading external modules. We then tell the Express app to server all static content from the **public** folder.
 
@@ -155,17 +155,17 @@ When all the setup work is done, we then tell the server to listen in on a certa
 
 So for now it's a simple web server serving only static (HTML, CSS and JavaScript) files to any HTTP/Web traffic coming its way. 
 
-Let's try it out by running it using the **Show Live** option at the top. It will bring up the chat app page just like before, with no new functionality. The send button should be working as before, too!
+Let's try it out by running it using the **Show Live** option at the top. It will bring up the chat app page just like before, with no new functionality. The send button should also be working as before!
 
 # Socket.IO for Real-time messaging
 
 Now it's time to add the last missing, yet crucial piece to our app: _chat functionality_!
 
-To do this, we will leverage yet another 3rd party Node module. It's called Socket.io.
+To do this, we will leverage yet another third party Node module. It's called Socket.io.
 
 Check it out here: <http://socket.io/>.
 
-Socket.io will leverage a more core technology that browsers give us called Web Sockets.
+Socket.io will leverage a core technology that browsers give us, called Web Sockets.
 
 What's nice about Socket.io is that it will let us write similar JS code on both the client (browser) side and at the server (Node) side. 
 
@@ -210,7 +210,7 @@ Open the **public/index.html** file and modify the `script` tags below so that w
 
 ## Step 4
 
-Open **public/app.js**, our client-side JS code file and let's add some code to send and receive messages from the browser.
+Open **public/app.js**, our client-side JS code file, and let's add some code to send and receive messages from the browser.
 
 Add the following code to the very top of the file.
 
@@ -290,9 +290,9 @@ server.listen(port, function () {
 
 ## Whoa, it works!
 
-Make sure all your files are saved, and the Node server is still running, and give it a shot.
+Make sure all your files are saved, and the Node server is still running, and then give it a shot.
 
-That's right, it works! That's all it took. The basic chat functionality works. Have your peer go to the same URL that you're on and you guys should be able to communicate!
+That's right, it works! That's all it took. The basic chat functionality works. Have your peer go to the same URL that you're on and you both should be able to communicate!
 
 Note: newcomers to the chat room can't see any previous messages (message history). We would have to implement that functionality for it to work that way.
 
