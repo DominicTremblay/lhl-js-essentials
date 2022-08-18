@@ -248,17 +248,16 @@ The `app.js` file should look like this.
 ```javascript
 const socket = io();
 
-$("button").on('submit', function() {
+$("form").on("submit", function () {
   const text = $("#message").val();
-  socket.emit('message', text);
-  $('#message').val('');
+  socket.emit("message", text);
+  $("#message").val("");
   return false;
 });
 
 socket.on('message', function (msg) {
   $('<li>').text(msg).appendTo('#history');
 });
-
 ```
 
 ## Final code for index.js
