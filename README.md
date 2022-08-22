@@ -222,12 +222,19 @@ This is saying that `socket` is now a reference to the SocketIO library.
 
 ## Step 5
 
-In that same file, replace the `alert` line from before with the following code:
+In that same **public/app.js** file, replace the `alert` line from the form on submit function with the following code:
 
 ```javascript
+$('form').on('submit',function () {
+  ...
+  // replace the alert statement with the following
   socket.emit('message', text);
   $('#message').val('');
+  ...
+});
 ```
+
+Note that only the alert line needs to be replaced. The other statements of the function should remain in place.
 
 The code above says to emit the textual message to the server instead of performing our temporary `alert` behavior. The second line in the code simply clears the input so that another message can be typed by the same user.
 
